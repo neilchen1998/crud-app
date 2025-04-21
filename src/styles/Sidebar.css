@@ -1,0 +1,28 @@
+.sidebar {
+    background-color: #f0f0f0;
+    width: 15%;
+    min-width: 100px;
+    overflow-y: auto; /* Enables vertical scrolling within the sidebar */
+    /* border: 1px solid blue; */
+}
+
+.sidebar ul {
+    list-style: none; /* Disables the bulletion points */
+    padding: 5px;
+}
+
+.sidebar button {
+    width: 85%;
+    height: 40px;
+    border: 1px solid #000000;
+    margin: 5px;
+}
+
+.sidebar button:hover {
+    background-color: #615d5d;
+}
+
+.sidebar-button-active {
+    font-weight: bolder;
+    background-color: #888181;
+}

@@ -1,50 +1,44 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { useState, FC } from "react";
 import { invoke } from "@tauri-apps/api/core";
+import Sidebar from "./components/Sidebar";
+import HomePage from "./pages/HomePage";
+import FilePage from "./pages/FilePage";
+import MainContent from "./components/MainContent";
 import "./styles/App.css";
 
-function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+interface Page {
+  name: string,
+  component: FC;
+}
 
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
+function App() {
+
+  const [currentPage, setCurrentPage] = useState("Home");
+
+  const handlePageChange = (page: string) => {
+    setCurrentPage(page);
   }
 
+  const pages: Page[] = [
+    {name: "Home", component: HomePage},
+    {name: "File", component: FilePage},
+    // { name: "X", component: XPage},
+  ];
+
+  const currentPageComponent = pages.find((page) => page.name === currentPage)?.component || (() => <div>Page Not Found</div>);
+
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
-
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
+    <div className="container">
+      <Sidebar
+        pages={pages}
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
         />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
-    </main>
+      <MainContent
+        currentPageComponent={currentPageComponent}
+        currentPage={currentPage}
+      />
+    </div>
   );
 }
 
