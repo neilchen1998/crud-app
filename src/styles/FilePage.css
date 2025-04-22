@@ -1,0 +1,24 @@
+textarea {
+    color: white;
+    background-color: grey;
+    font-family: "Courier New", Monaco, Consolas, "Source Code Pro", monospace;
+    font-size-adjust: inherit;
+    margin: 10px 10px;
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 30%;
+    max-height: 80%;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    background-color: gray;
+}
+
+.file-page h2 {
+    min-width: 25px;
+    max-width: 50%;
+    background-color: #17c99f;
+    border: 1px solid #ddd;
+    font-size: 0.9em;
+    color: #555;
+}
