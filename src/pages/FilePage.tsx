@@ -53,14 +53,18 @@ const FilePage: FC = () => {
   }
 
   return (
-    < div className='file-page'>
+    <div className='file-page'>
       <h1>Welcome to the File Page!</h1>
-      <h2>Current header file path: {headerFilePath === null ? 'No file is selected.' : headerFilePath}</h2>
-      <textarea readOnly value={headerFileContent === null ? 'Select a header file.' : headerFileContent}></textarea>
-      <button className='open-header-button' onClick={handleOpenHeaderFile}>Open Header File</button>
-      <h2>Current EEPROM file path: {eepromFilePath === null ? 'No file is selected.' : eepromFilePath}</h2>
-      <button className='open-eeprom-button' onClick={handleOpenEEPROMFile}>Open EEPROM File</button>
-    </ div>
+      <div className='header-file-section'>
+        <h2>Current header file path: {headerFilePath === null ? 'No file is selected.' : headerFilePath}</h2>
+        <textarea readOnly value={headerFileContent === null ? 'Select a header file.' : headerFileContent}></textarea>
+        <button onClick={handleOpenHeaderFile} style={{cursor: "pointer",}}>Open Header File</button>
+      </div>
+      <div className='eeprom-file-section'>
+        <h2>Current EEPROM file path: {eepromFilePath === null ? 'No file is selected.' : eepromFilePath}</h2>
+        <button className='open-eeprom-button' onClick={handleOpenEEPROMFile} style={{cursor: "pointer",}}>Open EEPROM File</button>
+      </div>
+    </div>
   );
 };
 

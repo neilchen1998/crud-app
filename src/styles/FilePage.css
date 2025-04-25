@@ -1,24 +1,64 @@
+.header-file-section {
+    display: 'flex';
+    align-items: 'center';
+    border: 1px solid #b01eba;
+    min-width: 400px;
+    max-width: 80%;
+    min-height: 300px;
+    position: relative; /* Makes the parent a positioned element */
+    resize: vertical;
+    margin: 15px;
+    padding-bottom: 30px; /* Avoids colliding with the bottom button */
+}
+
 textarea {
     color: white;
-    background-color: grey;
     font-family: "Courier New", Monaco, Consolas, "Source Code Pro", monospace;
     font-size-adjust: inherit;
-    margin: 10px 10px;
+    margin: 10px;
     resize: vertical; /* Allow vertical resizing */
-    min-height: 30%;
-    max-height: 80%;
-    border: 1px solid #000000;
+    min-height: 200px;
     border-radius: 5px;
     box-sizing: border-box;
     padding: 10px 10px;
     background-color: gray;
+    border: 1px solid #e42b2b;
+    width: 90%;
 }
 
 .file-page h2 {
-    min-width: 25px;
-    max-width: 50%;
-    background-color: #17c99f;
+    max-width: 300px;
+    background-color: #dfed67;
     border: 1px solid #ddd;
     font-size: 0.9em;
     color: #555;
+    margin: 5px;
+}
+
+.header-file-section button {
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+    border: 1px solid #e42b2b;
+    position: absolute;
+}
+
+.eeprom-file-section {
+    display: 'flex';
+    align-items: 'center';
+    border: 1px solid #b01eba;
+    min-width: 400px;
+    max-width: 80%;
+    min-height: 150px;
+    position: relative; /* Makes the parent a positioned element */
+    resize: vertical;
+    margin: 15px;
+}
+
+.eeprom-file-section button {
+    right: 0;
+    bottom: 0;
+    margin: 5px;
+    border: 1px solid #e42b2b;
+    position: absolute;
 }

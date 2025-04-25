@@ -22,7 +22,6 @@ function App() {
   const pages: Page[] = [
     {name: "Home", component: HomePage},
     {name: "File", component: FilePage},
-    // { name: "X", component: XPage},
   ];
 
   const currentPageComponent = pages.find((page) => page.name === currentPage)?.component || (() => <div>Page Not Found</div>);
