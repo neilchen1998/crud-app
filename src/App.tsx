@@ -3,6 +3,7 @@ import { invoke } from "@tauri-apps/api/core";
 import Sidebar from "./components/Sidebar";
 import HomePage from "./pages/HomePage";
 import FilePage from "./pages/FilePage";
+import ParameterPage from "./pages/ParameterPage";
 import MainContent from "./components/MainContent";
 import "./styles/App.css";
 
@@ -22,6 +23,7 @@ function App() {
   const pages: Page[] = [
     {name: "Home", component: HomePage},
     {name: "File", component: FilePage},
+    {name: "Parameter", component: ParameterPage},
   ];
 
   const currentPageComponent = pages.find((page) => page.name === currentPage)?.component || (() => <div>Page Not Found</div>);
