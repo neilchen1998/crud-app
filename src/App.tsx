@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import HomePage from "./pages/HomePage";
 import FilePage from "./pages/FilePage";
 import ParameterReadOnlyPage from "./pages/ParameterReadOnlyPage";
+import DropdownPage from "./pages/DropdownPage";
 import MainContent from "./components/MainContent";
 import "./styles/App.css";
 
@@ -24,6 +25,7 @@ function App() {
     {name: "Home", component: HomePage},
     {name: "File", component: FilePage},
     {name: "Parameter", component: ParameterReadOnlyPage},
+    {name: "DropdownPage", component: DropdownPage},
   ];
 
   const currentPageComponent = pages.find((page) => page.name === currentPage)?.component || (() => <div>Page Not Found</div>);
