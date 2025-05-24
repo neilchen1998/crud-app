@@ -1,9 +1,9 @@
 import { useState, FC } from "react";
-import { invoke } from "@tauri-apps/api/core";
+// import { invoke } from "@tauri-apps/api/core";
 import Sidebar from "./components/Sidebar";
 import HomePage from "./pages/HomePage";
 import FilePage from "./pages/FilePage";
-import ParameterPage from "./pages/ParameterPage";
+import ParameterPage from "./pages/ParameterListPage";
 import MainContent from "./components/MainContent";
 import "./styles/App.css";
 

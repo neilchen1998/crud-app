@@ -34,7 +34,7 @@ const ParameterPage: FC = () => {
 
     return (
         <div className='parameter-page'>
-            <h1>Welcome to the Parameter Page!</h1>
+            <h1>Welcome to the Parameter Value Page!</h1>
             <div>
       <label htmlFor="myDropdown">Select an option:</label>
       <select id="myDropdown" value={selectedItem} onChange={handleSelectChange}>
