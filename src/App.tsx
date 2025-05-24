@@ -3,7 +3,7 @@ import { useState, FC } from "react";
 import Sidebar from "./components/Sidebar";
 import HomePage from "./pages/HomePage";
 import FilePage from "./pages/FilePage";
-import ParameterPage from "./pages/ParameterListPage";
+import ParameterReadOnlyPage from "./pages/ParameterReadOnlyPage";
 import MainContent from "./components/MainContent";
 import "./styles/App.css";
 
@@ -23,7 +23,7 @@ function App() {
   const pages: Page[] = [
     {name: "Home", component: HomePage},
     {name: "File", component: FilePage},
-    {name: "Parameter", component: ParameterPage},
+    {name: "Parameter", component: ParameterReadOnlyPage},
   ];
 
   const currentPageComponent = pages.find((page) => page.name === currentPage)?.component || (() => <div>Page Not Found</div>);
